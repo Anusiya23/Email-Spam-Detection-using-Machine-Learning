@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body{
+background-image: url("{{ url_for('static', filename='email2.JPG') }}");
+background-repeat:no-repeat:
+background-size:100% 100%;
+background-position: center;
+background-size:cover;
+}
+
+label:after {
+  content:  ": ";
+}
+
+label {
+
+  color:black;
+  font-weight: bold;
+}
+
+form button[type='submit']  {
+   display: inline-block;
+   width: 70px;
+
+}
+</style>
+</head>
+
+
+<body background="{{ url_for('static', filename='email2.JPG') }}'>
+ <div class="login" align="center">
+     <b><font style="color:black" "font-family:verdana" size="5"><h1>EMAIL SPAM DETECTION</h1></font></b><br><br>
+    
+
+  
+<form action="{{ url_for('predict')}}"method="post">
+  <label for="Enter Mail Subject"><font style= size="5">Enter Mail Subject</font></label>
+  <input type="text" name="Enter Mail Subject" id="Enter Mail Subject" placeholder="" required="required" /><br><br>
+<br>
+<br>
+
+  <b><button type="Submit" class="btn btn-primary btn-block btn- large" size="5">Predict</b></button>
+ 
+</form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+   <b><font style="color:black" "font-family:verdana" size="6">{{ prediction_text}}</font></b>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</div>
+</body>
+</html>

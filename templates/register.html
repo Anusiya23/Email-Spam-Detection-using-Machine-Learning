@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+body{
+background-image: url("{{ url_for('static', filename='email2.JPG') }}");
+
+background-repeat:no-repeat;
+background-size:100% 100%;
+background-position: center;
+background-size:cover;
+}
+
+
+
+a:link, a:visited {
+ background-color: #f44336;
+ padding: 15px 25px;
+ color:black;
+ text-aign: center;
+ display: inline-block;
+}
+
+a:hover, a:active {
+ background-color:red;
+}
+
+
+</style>
+</head>
+
+<body background="{{ url_for('static', filename='email2.JPG') }}'>
+ <div class="login" align="center">
+     <b><font style="color:black" "font-family:verdana" size="5"><h1>REGISTER</h1></font></b>
+
+  <br>
+<form action="{{ url_for('register')}}"method="post">
+  <input type="text" name="user_name" placeholder="user_name" required="required" /><br><br><br>
+  <input type="password" value="" id="myInput" name="password" placeholder="password" required="required" /><br><br><br>
+
+  <b><button type="Submit" class="btn btn-primary btn-block btn- large" background-color="blue">Register</b></button><br><br>
+ 
+</form>
+
+<br><br>
+   <b><font style="color:black" "font-family:verdana" size="5">{{text}}</font></b><br><br>
+   <b><a href="/login">LOGIN</a></b><br><br>
+
+
+</div>
+</body>
+</html>
